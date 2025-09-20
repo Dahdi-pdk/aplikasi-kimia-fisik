@@ -8,7 +8,7 @@ Aplikasi E-Book interaktif untuk mempelajari materi kimia fisik dengan lebih mud
 
 Aplikasi Kimia Fisik adalah platform pembelajaran digital yang berisi kumpulan materi kimia fisik dalam format e-book yang interaktif dan mudah diakses. Aplikasi ini dirancang untuk membantu mahasiswa dan pengajar dalam mempelajari konsep-konsep kimia fisik.
 
-## ✨ Fitur Utama
+## ✨ Fitur Utama(cooming soon maybe)
 
 - 📖 **Materi Lengkap** - Kumpulan materi kimia fisik terstruktur
 - 🔍 **Pencarian Cepat** - Temukan topik tertentu dengan mudah
@@ -17,7 +17,7 @@ Aplikasi Kimia Fisik adalah platform pembelajaran digital yang berisi kumpulan m
 - 🔖 **Bookmark** - Tandai halaman penting untuk dibaca nanti
 - 📊 **Visualisasi Interaktif** - Simulasi dan animasi konsep kimia fisik
 
-## 🧪 Topik yang Dicakup
+## 🧪 Topik yang Dicakup(maybe)
 
 - Termodinamika Kimia
 - Kinetika Kimia
@@ -28,7 +28,7 @@ Aplikasi Kimia Fisik adalah platform pembelajaran digital yang berisi kumpulan m
 - Kimia Permukaan
 - Dan banyak lagi...
 
-## 🛠️ Teknologi yang Digunakan
+## 🛠️ Teknologi yang Digunakan(maybe this fake)
 
 - **Frontend**: React Native / Flutter (untuk aplikasi mobile)
 - **Backend**: Node.js / Firebase
@@ -91,6 +91,20 @@ Jika Anda memiliki pertanyaan atau saran, silakan hubungi:
 - Email: youremail@example.com
 - Issues: [GitHub Issues](https://github.com/username/aplikasi-kimia-fisik/issues)
 
+
+| Nama Elemen      | Warna        | Kode Hex         | Keterangan                       |
+|------------------|--------------|------------------|-----------------------------------|
+| Latar belakang   | Abu-abu muda | `#f4f4f4`        | Background utama                  |
+| Judul (h1)       | Biru         | `#3498db`        | Warna teks judul dan card-title   |
+| Teks paragraf    | Abu-abu      | `#555`           | Warna teks paragraf               |
+| Card             | Putih        | `#fff`           | Latar belakang card               |
+| Card desc        | Abu-abu tua  | `#666`           | Warna teks deskripsi card         |
+| Bayangan card    | Hitam transparan | `rgba(0,0,0,0.08)` | Box-shadow card                  |
+| Hover card       | Biru transparan | `rgba(52,152,219,0.15)` | Box-shadow saat hover        |
 ---
+format box-shadow
+``` css
+box-shadow: offset-x offset-y blur-radius spread-radius color inset;
+```
 
 **⭐ Jangan lupa memberikan bintang pada repositori ini jika Anda merasa terbantu!**
