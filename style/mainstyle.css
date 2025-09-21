@@ -9,15 +9,25 @@ body{
 }
 
 .navbar{
-    position: fixed;
+    position:sticky;
     display: flex;
     width:100%;
     height: 60px;
-    padding: 2px 5px;
+    padding: 2px 0px;
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    z-index: 5;
+}
+.navbar .burger-label,.dropdown{
+    margin:0px 20px ;
+}
+.scrolled{
+    top: 0;
+    position: fixed;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+    transition: 0.3s ease-in-out;
 }
 .dropdown{
     width: 200px;
@@ -27,4 +37,46 @@ body{
 }
 .navbarSvg{
     cursor: pointer;
+}
+#navbarBurger:checked ~ .overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+#navbarBurger:checked ~ .side-bar{
+    left: 0;
+    border-right: #0e0606 2px solid;
+}
+.side-bar{
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    z-index: 10;
+    transition: 0.75s ease-out;
+}
+.side-bar .closeSvg{
+    cursor: pointer;
+    margin: 10% 0 0 75%;
+}
+.materi{
+    margin: 20px;
+    /* top: 100px; */
+    /* margin: 0 20px 20px 20px; */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    min-height: 300px;
+}
+.materi:hover{
+    box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+
 }

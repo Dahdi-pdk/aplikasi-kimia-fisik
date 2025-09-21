@@ -13,12 +13,24 @@
 
 <body>
     <nav class="navbar">
-        <input type="radio" id="navbarBurger" class="burger" name="burger">
+        <input type="checkbox" id="navbarBurger" class="burger">
         <label for="navbarBurger" class="burger-label">
-            <svg onclick="click()" class="navbarSvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+            <svg onclick="click()" class="navbarSvg" xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
                 <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
             </svg>
         </label>
+        <label for="navbarBurger" class="overlay"></label>
+        <div class="side-bar" id="sideBar">
+            <label for="navbarBurger" class="burger-label">
+                <svg class="closeSvg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                    width="24px" fill="#1f1f1f">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+            </label>
+        </div>
+
         <select id="pilihan" name="buah" class="dropdown">
             <option value="apel">Apel</option>
             <option value="jeruk">Jeruk</option>
@@ -26,10 +38,74 @@
             <option value="pisang">Pisang</option>
         </select>
     </nav>
+    <main>
+        <div id="materi1" class="materi" value="1">
+            <h1>Apel</h1>
+        </div>
+        <div id="materi2" class="materi" value="2">
+            <h1>Jeruk</h1>
+        </div>
+        <div id="materi3" class="materi" value="3">
+            <h1>Mangga</h1>
+        </div>
+        <div id="materi4" class="materi" value="4">
+            <h1>Pisang</h1>
+        </div>
+
+    </main>
+    <div style="top: 300px;position:relative;">
+        <button onclick="ubah()">Ubah value</button>
+    </div>
 </body>
 <script>
-    function click(){
-        alert("Clicked");
+    const a = document.getElementById("navbarBurger");
+    function click() {
+        console.log("menu sedang dibuka = " + a.checked);
+
     }
+    const content = document.querySelector("main");
+    for (let child of content.children) {
+        console.log(child); // langsung dapat elemen
+    }
+    const pilihan = document.getElementById("pilihan");
+    for (let i of pilihan.options) {
+        console.log(i.value);
+    }
+    function ubah() {
+        var a = prompt("Pilih nomor berapa ?")
+        pilihan.selectedIndex = Number(a);
+        console.log(pilihan.selectedIndex);
+    }
+    window.addEventListener("scroll", () => {
+        <!-- console.log("Scroll posisi Y:", window.scrollY); -->
+        window.scrollY > 50 ? document.querySelector(".navbar").classList.add("scrolled") : document.querySelector(".navbar").classList.remove("scrolled");
+    });
+    const options = {
+        root: null,       // viewport
+        threshold: 1      // 0 artinya walau 1px saja sudah dianggap "terlihat"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log(entry.target.id + " mulai terlihat");
+                console.log(content.children[entry.target.id]);
+                const chil = content.children[entry.target.id];
+                console.log(chil.id);
+                console.log(Array.prototype.indexOf.call(content.children, entry.target));
+                pilihan.selectedIndex = Array.prototype.indexOf.call(content.children, entry.target);
+                
+            } else {
+                console.log(entry.target.id + " keluar dari layar");
+            }
+        });
+    }, options);
+
+    document.querySelectorAll('.materi').forEach(box => {
+        observer.observe(box);
+        console.log(box[1]);
+    });
+
 </script>
+
 </html>
